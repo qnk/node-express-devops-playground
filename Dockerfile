@@ -1,11 +1,16 @@
-FROM node:8.15.1-jessie as backend
-WORKDIR /app/
+FROM node
 
-COPY package.json package.lock /app/
-RUN npm init && install
+COPY . package.json
 
+RUN apt-get update && /
+    apt-get install -y nodejs  && /
+    npm i -g express-generator && /
+    mkdir /opt/app
 
-FROM nginx:8.15.1-jessie
-WORKDIR /app/
+WORKDIR /opt/app
+RUN express -f
 
-COPY --from=0 /app/ /opt/
+WORKDIR /opt/app/express
+RUN npm i
+
+CMD [ "npm", "start" ]
