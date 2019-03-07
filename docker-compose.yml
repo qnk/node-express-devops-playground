@@ -2,5 +2,14 @@ version: '3'
 services:
   web:
     build: .
+    container_name: node-8web
     ports:
-     - "8000:3000"
+     - "3000:3000"
+  proxy:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./subdominio.qnk.com:/etc/nginx/sites-available/subdominio.qnk.com

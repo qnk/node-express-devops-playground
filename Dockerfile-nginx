@@ -1,0 +1,3 @@
+FROM nginx
+
+COPY subdominio.qnk.com /etc/nginx/sites-available/
