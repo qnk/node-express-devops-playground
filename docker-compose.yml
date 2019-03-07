@@ -14,4 +14,4 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./subdominio.qnk.com:/etc/nginx/sites-available/subdominio.qo .m
+      - ./subdominio.qnk.com:/etc/nginx/sites-available/subdominio.qnk.com
