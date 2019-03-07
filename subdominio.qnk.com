@@ -1,12 +1,12 @@
-upstream subdominio.tu_dominio.com {  
+upstream subdominio.qnk.com {  
   server 127.0.0.1:3000;
 }
 
 server {  
   listen 0.0.0.0:80;
-  server_name subdominio.dominio.com;
-  access_log /var/log/nginx/subdominio.dominio.access.log;
-  error_log /var/log/nginx/subdominio.dominio.error.log debug;
+  server_name subdominio.qnk.com;
+  access_log /var/log/nginx/subdominio.qnk.access.log;
+  error_log /var/log/nginx/subdominio.qnk.error.log debug;
 
   location / {
     proxy_set_header X-Real-IP $remote_addr;
@@ -14,7 +14,7 @@ server {
     proxy_set_header Host $http_host;
     proxy_set_header X-NginX-Proxy true;
 
-    proxy_pass http://subdominio.dominio.com;
+    proxy_pass http://subdominio.qnk.com;
     proxy_redirect off;
   }
 }
