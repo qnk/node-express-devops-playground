@@ -1,3 +1,5 @@
 FROM nginx
 
 COPY subdominio.qnk.com /etc/nginx/sites-available/
+
+RUN sudo ln -s /etc/nginx/sites-available/subdominio.qnk.com /etc/nginx/sites-enabled/subdomiino.qnk.com
