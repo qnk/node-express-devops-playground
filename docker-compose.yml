@@ -4,12 +4,14 @@ services:
     build: .
     container_name: node-8web
     ports:
-      - "3000:3000"
+      - 3000:3000
   proxy:
-    image: nginx:latest
+    build:
+      context: . 
+      dockerfile: Dockerfile-nginx
     container_name: nginx
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./subdominio.qnk.com:/etc/nginx/sites-available/subdominio.qnk.com
+      - ./subdominio.qnk.com:/etc/nginx/sites-available/subdominio.qo .m
